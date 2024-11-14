@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Home from "./page";
-import { GalleryHorizontal, HomeIcon, MessageCircle, Projector, User, UserCheck2Icon, UserCircle } from "lucide-react";
+import { Briefcase, GalleryHorizontal, HomeIcon, Layout, MessageCircle, Projector, Star, User, UserCheck2Icon, UserCircle, Workflow } from "lucide-react";
 import { FloatingNav } from "@/components/ui/floating-navbar";
-// import Footer from "@/components/ui/footer"
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,18 +29,25 @@ const navItems = [
   },
   {
     name: "About",
-    link: "/about",
+    link: "#about",
     icon: <UserCircle className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
     name: "Projects",
     link: "#projects",
     icon: 
-      <GalleryHorizontal className="h-4 w-4 text-neutral-500 dark:text-white" />
+      <Briefcase className="h-4 w-4 text-neutral-500 dark:text-white" />
+  },
+
+  {
+    name: "Skills",
+    link: "#skills",
+    icon: 
+      <Star className="h-4 w-4 text-neutral-500 dark:text-white" />
   },
   {
     name: "Contact",
-    link: "/contact",
+    link: "#contact",
     icon: 
       <MessageCircle className="h-4 w-4 text-neutral-500 dark:text-white" />
   },
@@ -60,7 +67,7 @@ export default function RootLayout({
       >
         <FloatingNav navItems={navItems}/>
         {children}
-        {/* <Footer/> */}
+       
       </body>
     </html>
   );

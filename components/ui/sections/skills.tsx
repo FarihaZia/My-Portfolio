@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "../hooks";
 import game from "@/public/game.jpeg"
  
-export function Projects() {
+export function Skills() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
   );
@@ -33,8 +33,8 @@ export function Projects() {
  
   return (
     <>
-    <div id="projects" className=" flex justify-center">
-    <h1 className="mt-10 text-3xl font-bold text-white">My projects</h1></div>
+    <div id="skills" className=" flex justify-center">
+    <h1 className="mt-10 text-3xl font-bold text-white">My Skills</h1></div>
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
@@ -93,20 +93,24 @@ export function Projects() {
                     >
                       {active.title}
                     </motion.h3>
-                   
+                    {/* <motion.p
+                      layoutId={`description-${active.description}-${id}`}
+                      className="text-neutral-600 dark:text-neutral-400 text-base"
+                    >
+                      {active.description}
+                    </motion.p> */}
                   </div>
  
-                  <motion.a
+                  { <motion.a
                     layout
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
+                    className="px-4 py-3 text-sm rounded-full font-bold  text-white"
                   >
-                    {active.ctaText}
-                  </motion.a>
+                     {/* {active.ctaText} */}
+                   </motion.a>  }
                 </div>
                 <div className="pt-4 relative px-4">
                   <motion.div
@@ -132,7 +136,7 @@ export function Projects() {
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col  hover:bg-neutral-800  rounded-xl cursor-pointer"
+            className="p-4 flex flex-col  hover:bg-neutral-800 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col  w-full">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -151,7 +155,12 @@ export function Projects() {
                 >
                   {card.title}
                 </motion.h3>
-                
+                {/* <motion.p
+                  layoutId={`description-${card.description}-${id}`}
+                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base"
+                >
+                  {card.description}
+                </motion.p> */}
               </div>
             </div>
           </motion.div>
@@ -197,59 +206,61 @@ export const CloseIcon = () => {
 const cards = [
   {
   
-    title: "Simple Calculator",
-    src :"/calculator.webp", 
-    ctaText: "Visit",
-    ctaLink: "https://github.com/FarihaZia/mySimple-Calculator.git",
+    title: "TYPE SCRIPT",
+    src :"/ts.PNG", 
+    // ctaText: "Visit",
+ 
     content: () => {
       return (
         <p>
-          Its a Simple calculator
+         TypeScript is a programming language that adds more structure and safety to JavaScript. 
+        It helps developers catch errors early by allowing them to set specific types for variables and functions.
+         This makes code easier to understand, reduces mistakes, and is helpful for large projects.
+          TypeScript works with any JavaScript code and, in the end, turns into regular JavaScript that browsers and servers can run.
         </p>
       );
     },
   },
   {
     
-    title: "ATM Machine",
-    src: "/atm.jpg",
-    ctaText: "Visit",
-    ctaLink: "https://github.com/FarihaZia/ATM-Machine.git",
-    content: () => {
-      return (
+    title: "JAVA SCRIPT",
+    src: "/js.PNG",
+    // ctaText: "Visit",
+    content:()=>{
+      return(
         <p>
-         Use my ATM machine using Command Line Interface
+        JavaScript is a programming language used to make websites interactive. It runs in the browser,so when you click a button,scroll through a slideshow, or see animations on a webpage,that's usually JavaScript at work. It's like the "action" part of a webpage,allowing things to change and respond to what you do,unlike HTML and CSS, which handle content and design.
         </p>
-      );
+      )
     },
   },
  
   {
     
-    title: "Number Guessing Game",
-    src: "/game.jpeg",
-    ctaText: "Visit",
-    ctaLink: "https://github.com/FarihaZia/cli-number-guessing.git",
+    title: "HTML",
+    src: "/html.jpg",
+    // ctaText: "Visit",
+   
     content: () => {
       return (
         <p>
-        Its a CLI based Number Guessing Game
+HTML, or Hypertext Markup Language, is the basic language used to create the structure of a webpage. It organizes content into elements like headings, paragraphs, links, images, and buttons. Think of it as the "skeleton" of a webpage, providing the essential content and layout, while CSS and JavaScript add style and interactivity.
         </p>
       );
     },
   },
-  // {
-  //   description: "Lord Himesh",
-  //   title: "Todo-list app",
-  //   src:"/todo-list.png",
-  //   ctaText: "Visit",
-  //   ctaLink: "https://github.com/FarihaZia/todo-list-app.git",
-  //   content: () => {
-  //     return (
-  //       <p>
-  //        Manage your daily task with this app 
-  //       </p>
-  //     );
-  //   },
-  // },
+  {
+
+    title: "CSS",
+    src:"/css.jpg",
+    // ctaText: "Visit",
+    
+    content: () => {
+      return (
+        <p>
+         CSS, or Cascading Style Sheets, is the language used to style and design the look of websites. It controls things like colors, fonts, layouts, and spacing, making a website visually appealing and easy to navigate. While HTML provides the content (like text and images), CSS makes that content look nice by adding style and structure.
+        </p>
+      );
+    },
+  },
 ];
