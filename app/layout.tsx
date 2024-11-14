@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Home from "./page";
-import { Briefcase, GalleryHorizontal, HomeIcon, Layout, MessageCircle, Projector, Star, User, UserCheck2Icon, UserCircle, Workflow } from "lucide-react";
+import { Briefcase,HomeIcon, MessageCircle,  Star, UserCircle,  } from "lucide-react";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 
 

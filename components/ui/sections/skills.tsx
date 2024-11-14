@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "../hooks";
-import game from "@/public/game.jpeg"
+
  
 export function Skills() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -131,7 +131,7 @@ export function Skills() {
         ) : null}
       </AnimatePresence>
       <ul className="max-w-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
@@ -229,7 +229,7 @@ const cards = [
     content:()=>{
       return(
         <p>
-        JavaScript is a programming language used to make websites interactive. It runs in the browser,so when you click a button,scroll through a slideshow, or see animations on a webpage,that's usually JavaScript at work. It's like the "action" part of a webpage,allowing things to change and respond to what you do,unlike HTML and CSS, which handle content and design.
+        JavaScript is a programming language used to make websites interactive. It runs in the browser,so when you click a button,scroll through a slideshow, or see animations on a webpage,thats usually JavaScript at work. Its like the action art of a webpage,allowing things to change and respond to what you do,unlike HTML and CSS, which handle content and design.
         </p>
       )
     },
@@ -244,7 +244,7 @@ const cards = [
     content: () => {
       return (
         <p>
-HTML, or Hypertext Markup Language, is the basic language used to create the structure of a webpage. It organizes content into elements like headings, paragraphs, links, images, and buttons. Think of it as the "skeleton" of a webpage, providing the essential content and layout, while CSS and JavaScript add style and interactivity.
+HTML, or Hypertext Markup Language, is the basic language used to create the structure of a webpage. It organizes content into elements like headings, paragraphs, links, images, and buttons. Think of it as the skeleton of a webpage, providing the essential content and layout, while CSS and JavaScript add style and interactivity.
         </p>
       );
     },
